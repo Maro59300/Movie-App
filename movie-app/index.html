@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Movie App</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="js/scriptHome.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <div id="menu">
-                <a id="menu-item" href="index.html">Home</a>
-                <a id="menu-item" href="indexTvShows.html">TVs</a>
-                <a id="menu-item" href="indexMovies.html">Movies</a>
-                <a id="menu-item" href="indexTrending.html">Trending</a>
-            </div>
-            
-            <form id="form">
-                <input
-                    type="text"
-                    id="search"
-                    placeholder="Search"
-                    class="search"
-                />
-            </form>
-        </header>
-        <main id="main"></main>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/scriptHome.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="menu">
+            <a id="menu-item" href="index.html">Home</a>
+            <a id="menu-item" href="indexTvShows.html">TVs</a>
+            <a id="menu-item" href="indexMovies.html">Movies</a>
+            <a id="menu-item" href="indexTrending.html">Trending</a>
+        </div>
+
+        <form id="form">
+            <input type="text" id="search" placeholder="Search" class="search" />
+        </form>
+    </header>
+    
+    <div class="slideshow-container" id="slideshow-container">
+        <!-- Slides will be added dynamically here -->
+        <!-- Next and previous buttons -->
         
-    </body>
+    </div>
+    <div style="text-align:center" id="slideshow-dots">
+        <!-- Dots will be added dynamically here -->
+    </div>
+
+    <main id="main">
+
+    </main>
+
+</body>
+
 </html>

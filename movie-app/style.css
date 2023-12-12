@@ -4,21 +4,23 @@
 
 /* Define CSS Variables */
 :root {
-    --base-color: #7f8c8d; /* Base color */
-    --darker-color: #687478; /* Darker version of base color */
-    --darkest-color: #505759; /* Even darker version of base color */
-    --text-color-light: #fff;
-    --placeholder-color: #7378c5;
-    --rating-green: rgb(39, 189, 39);
-    --rating-orange: orange;
-    --rating-red: rgb(189, 42, 42);
+    --base-color: #5e6f73; /* Updated Base color: Deeper blue-gray */
+    --darker-color: #4d5a5e; /* Updated Darker version of base color */
+    --darkest-color: #3b4649; /* Updated Even darker version of base color */
+    --text-color-light: #e0e0e0; /* White text color for contrast */
+    --placeholder-color: #7a8b97; /* Updated Placeholder color: Muted blue */
+    --rating-green: #2e7d32; /* Updated Rating green: Deep forest green */
+    --rating-orange: #bf360c; /* Updated Rating orange: Burnt orange */
+    --rating-red: #800000; /* Updated Rating red: Dark maroon */
 }
 
-/* Body */ 
+
+/* Body */
 body {
     background-color: var(--base-color);
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    justify-content: center;
 }
 
 /* Header */
@@ -29,25 +31,29 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1% 0;
-    position: fixed; /* Fixed position */
-    top: 0; /* Align to the top */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it's above other elements */
+    position: fixed;
+    /* Fixed position */
+    top: 0;
+    /* Align to the top */
+    width: 100%;
+    /* Full width */
+    z-index: 1000;
+    /* Ensure it's above other elements */
 }
 
-#menu{
-    display:inline-flex;
+#menu {
+    display: inline-flex;
     margin-left: 2%;
-   }
+}
 
 #menu-item {
     background-color: transparent;
     border: 2px solid var(--darkest-color);
     font-family: inherit;
-    text-decoration:none;
-    font-size: 100%;
+    text-decoration: none;
+    font-size: 150%;
     padding: 0% 5%;
-    margin:0% 2%;
+    margin: 0% 2%;
     color: var(--text-color-light);
 }
 
@@ -56,15 +62,18 @@ header {
     outline: none;
 }
 
+
+
 #form {
     margin-right: 3.5%;
 }
+
 /* Search */
 .search {
     background-color: transparent;
     border: 2px solid var(--darkest-color);
     font-family: inherit;
-    font-size: 100%;
+    font-size: 150%;
     padding: 0% 5%;
     color: var(--text-color-light);
 }
@@ -84,22 +93,86 @@ header {
     outline: none;
 }
 
+#filter {
+    background-color: var(--darker-color);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5% 0;
+    
+
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: 2px solid var(--darkest-color);
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 150%;
+    padding: 0% 5%;
+    width: 180px;
+    margin: 0% 2%;
+    color: var(--text-color-light);
+}
+
+.dropdown-content::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--base-color);
+    width: 175px;
+    height: 415px;
+    z-index: 1000;
+ 
+    top: 74%;
+    
+}
+
+.dropdown-content option {
+    border: 1px solid var(--darkest-color);
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    height: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.selected {
+    background-color: var(--darker-color);
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+#filter:hover .dropdown-content {
+    display: block;
+   
+}
+
+#filter:hover .dropbtn {
+    background-color: var(--darkest-color);
+}
+
 /* Main */
 #main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 4% 1%;
+    margin: 8% 1%;
 }
 
 .media {
     background-color: var(--darker-color);
     border-radius: 3%;
-    box-shadow: 0 4% 5% rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
     margin: 1% 1%;
-    width: 18%;
+    width: 15%;
 }
 
 .media img {
@@ -107,15 +180,15 @@ header {
 }
 
 .media-info {
-    color: var(--text-color-light);
+    font-weight: 700; /* Bolder headings */
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5% 1% 1%;
-    letter-spacing: 0.5%;
-    font-size: 75%;
+    margin: 1%;
+    font-size: 100%;
     font-weight: lighter;
-   
 }
 
 .media-info h3 {
@@ -124,11 +197,11 @@ header {
 
 .media-info span {
     background-color: var(--darkest-color);
-    border-radius: 3%;
-    border: 2px solid var(--darkest-color);
+    border-radius: 50%;
     font-weight: bold;
-    padding: 0.25% 0.5%;
-    
+    padding: 3% 3%;
+    width: 10%;
+    text-align: center;
 }
 
 .media-info span.green {
@@ -148,6 +221,7 @@ header {
         transform: translateY(100%);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -180,3 +254,273 @@ header {
 }
 
 
+
+.slideshow-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--darker-color);
+    margin: 7% 16% 2% 16%;
+    
+
+    
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+
+  .mySlides img {
+    width: 40%;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 2;
+    right: -20%;
+    
+  }
+  
+  .overview2 {
+       
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    
+    color: var(--darkest-color);
+    left: -20%;
+    transition: all 0.5s;
+    background: var(--text-color-light);
+    z-index: 1;
+    flex-direction: column;
+      
+    }
+
+    #slideshow-container .mySlides .overview2 .overview-rate{
+        transform:translatex(600%) translatey(50%) !important;
+       }
+       
+
+    .overview2 h1 {
+        position: relative;
+        top: 0%;
+        margin-top: 5%;
+        margin-bottom: 25%;
+        margin-left: 4%;
+        height: 7%;
+        font-size: 200%;
+    }
+
+    .overview2 h2 {
+        position: relative;
+        margin-top: 0%;
+        margin-left: 4%;
+        
+        
+        
+    }
+
+    .overview2 h3 {
+        position: relative;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: small;
+        
+        
+    }
+
+   .overview-rate {
+    position: relative;
+    background-color: var(--darkest-color);
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 3% 3%;
+    width: 7%;
+    height: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+    .green {
+        position: center;
+        color:var(--rating-green);
+    }
+
+    .orange {
+        position: center;
+        color:var(--rating-orange);
+    }
+
+    .red {
+        position: center;
+        color:var(--rating-red);
+    }
+
+    .mySlides:hover .overview2{
+        transform: translateX(50%);
+
+    }
+
+    .mySlides:hover img{
+        transform: translateX(-50%);
+    }
+
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 300%;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: #0D1821;
+  }
+  
+  
+  
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  #slideshow-container .prev{
+    transform:translatex(-536px) translatey(-60px);
+   }
+   
+   /* Next */
+   #slideshow-container .next{
+    padding-left:15px;
+    transform:translatex(537px) translatey(-60px);
+   }
+   
+   @media screen and (max-width: 600px) {
+    /* Adjust header and menu styles */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        align-items: baseline;
+        margin-left: 30px
+    }
+
+    #menu-item {
+        padding: 10px;
+        font-size: 100%;
+        margin: 10px 5px; /* Stack menu items vertically */
+    }
+    
+    #form {
+        margin-left: 35px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust main content layout */
+    #main {
+        margin: 15% 2%;
+    }
+
+    #filter {
+        margin-left: 120px;
+        margin-bottom: 10px;
+    }
+
+
+    .media {
+        width: 100%; /* Full width for each media item */
+        margin: 2%;
+    }
+
+    /* Adjust slideshow container */
+    .slideshow-container {
+        margin: 15% 2%;
+    }
+
+    .mySlides img {
+        width: 50%; /* Full width images in the slider */
+        right: 0; /* Reset position */
+    }
+
+    .overview2 {
+        width: 50%; /* Full width for overview */
+        left: 0; /* Reset position */
+        
+    }
+
+    .overview2 h1{
+        font-size: 40%;
+    }
+    .overview2 h2{
+        font-size: 40%;
+    }
+    .overview2 h3{
+        font-size: 40%;
+    }
+    .mySlides:hover .overview2, .mySlides:hover img {
+        transform: none; /* Disable hover effect on mobile */
+    }
+
+    /* Adjust next & previous buttons */
+    .prev, .next {
+        font-size: 200%; /* Adjust size for mobile */
+        top: 40%; /* Adjust position for mobile */
+    }
+
+    #slideshow-container .prev {
+        transform: translateX(0) translateY(0);
+    }
+
+    #slideshow-container .next {
+        transform: translateX(0) translateY(0);
+    }
+}
